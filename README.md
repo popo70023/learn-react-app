@@ -44,3 +44,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Create-React-APP CLI
+[Getting Started](https://www.npmjs.com/package/generate-react-cli)
+
+### Create Layout
+`npx generate-react-cli component LayoutName --type=layout`
+### Create Page
+`npx generate-react-cli component PageName --type=page`
+
+### Create Component
+`npx generate-react-cli component ComponentName`
