@@ -59,6 +59,7 @@
 
             .search-input {
                 width: 80%;
+                border-style: none;
             }
 
             .search-button {
@@ -86,6 +87,7 @@
     }
 
     button {
+        border-style: none;
         border-radius: 10px;
     }
 }
