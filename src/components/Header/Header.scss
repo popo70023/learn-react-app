@@ -1,15 +1,14 @@
 .Header {
     .logo-bar {
-        position:absolute;
-        left:87px;
-        top:81px;
-        justify-content: space-between;
+        position: absolute;
+        left: 87px;
+        top: 81px;
     }
 
     .beta-hint {
-        position:absolute;
-        left:1275px;
-        top:67px;
+        position: absolute;
+        left: 1275px;
+        top: 67px;
         background-color: #A4D8F7;
         color: #0C1E5B;
         width: 85px;
@@ -17,31 +16,26 @@
     }
 
     .tool-bar {
-        position:absolute;
-        left:80px;
-        top:133px;
+        position: absolute;
+        left: 80px;
+        top: 133px;
         display: flex;
         height: 48px;
 
         .user-switch {
-            position:absolute;
-            display: flex;
+            position: absolute;
             background-color: #FFFFFF;
             color: #0C1E5B;
             height: inherit;
             width: 168px;
-
-            .user-icon {
-                background-color: #A4D8F7;
-                height: 30px;
-                width: 30px;
-                border-radius: 40px;
-            }
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
         }
 
         .activate-button {
-            position:absolute;
-            left:268px;
+            position: absolute;
+            left: 268px;
             background-color: #A4D8F7;
             color: #0C1E5B;
             height: inherit;
@@ -49,41 +43,47 @@
         }
 
         .search-frame {
-            position:absolute;
-            left:454px;
+            position: absolute;
+            left: 454px;
             display: flex;
             background-color: #FFFFFF;
             color: #0C1E5B;
             height: inherit;
             width: 501px;
+            border-radius: 10px;
 
             .search-input {
                 width: 80%;
                 border-style: none;
+                border-radius: 10px;
             }
 
             .search-button {
+                position: absolute;
+                right: 0;
+                height: inherit;
                 background-color: #FFFFFF;
             }
         }
 
         .create-button {
-            position:absolute;
-            left:975px;
+            position: absolute;
+            left: 975px;
             background-color: #FF6966;
             color: #FFFFFF;
             height: inherit;
             width: 106px;
         }
+    }
 
-        .icon-bar {
-            position:absolute;
-            left:1176px;
-            display: flex;
-            justify-content: space-between;
-            height: 18px;
-            width: 184px;
-        }
+    .icon-bar {
+        position: absolute;
+        left: 1176px;
+        top: 145px;
+        display: flex;
+        justify-content: space-between;
+        height: 18px;
+        width: 184px;
     }
 
     button {

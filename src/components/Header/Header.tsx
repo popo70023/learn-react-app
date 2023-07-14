@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 import './Header.scss';
 import logo from '../../assets/svg/logo.svg';
+import userIcon from '../../assets/svg/user_icon.svg';
 import searchIcon from '../../assets/svg/search_icon.svg';
 import dropDownIconBlue from '../../assets/svg/drop_down_icon_blue.svg';
 import dropDownIconWhite from '../../assets/svg/drop_down_icon_white.svg';
@@ -21,7 +22,7 @@ const Header: FC<HeaderProps> = () => (
     </button>
     <div className="tool-bar">
       <button className="user-switch">
-        <div className="user-icon"></div>
+        <img src={userIcon} />
         Name User
         <img src={dropDownIconBlue} />
       </button>
@@ -41,12 +42,12 @@ const Header: FC<HeaderProps> = () => (
         Create
         <img src={dropDownIconWhite} />
       </button>
-      <div className="icon-bar">
-        <img src={helpIcon} />
-        <img src={settingIcon} />
-        <img src={bellIcon} />
-        <img src={accountIcon} />
-      </div>
+    </div>
+    <div className="icon-bar">
+      <img src={helpIcon} />
+      <img src={settingIcon} />
+      <img src={bellIcon} />
+      <img src={accountIcon} />
     </div>
   </div>
 );
