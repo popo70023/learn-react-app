@@ -1,12 +1,12 @@
 import { type FC } from 'react';
-import './HorizonalMenu.scss';
+import './TemplateName.scss';
 
-interface HorizonalMenuProps {}
+interface TemplateNameProps {}
 
-const HorizonalMenu: FC<HorizonalMenuProps> = () => (
-  <div className="HorizonalMenu" data-testid="HorizonalMenu">
-    HorizonalMenu Component
+const TemplateName: FC<TemplateNameProps> = () => (
+  <div className="TemplateName" data-testid="TemplateName">
+    TemplateName Component
   </div>
 );
 
-export default HorizonalMenu;
+export default TemplateName;
