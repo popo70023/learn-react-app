@@ -57,15 +57,27 @@ const HorizontalMenu: FC<HorizontalMenuProps> = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
+  const [activeButton, setActiveButton] = React.useState('');
+
+  const handleButtonClick = (item: string) => {
+    setActiveButton(item);
+  };
   return (
     <div className="HorizontalMenu">
       <div className="ButtonGroup">
         {items.map((item, index) => (
-          <button key={index} className={`Button Button${item}`}>{item}</button>
+          <button
+            key={index}
+            className={`HorizontalMenuLink ${item} ${activeButton === item ? 'HorizonalMenuBtnActive' : ''}`}
+            onClick={() => {handleButtonClick(item);}}>
+          <div className="HorizonalMenuBtn">
+          {item}
+          </div>
+          </button>
         ))}
         <Select {...DropdownClass}/>
-        <button className="Button Developers">{'Developers'}</button>
-        <button className="Button TestMode">{'Test Mode'}</button>
+        <button className="HorizontalMenuLink Developers"><div className="HorizonalMenuBtn">{'Developers'}</div></button>
+        <h5 className="HorizontalMenuLink TestMode"><div className="HorizonalMenuBtn">{'Test Mode'}</div></h5>
         <FormControlLabel
         control={<Switch checked={checked} onChange={handleChange} className="SwitchButton"/>}label=""/>
       </div>
