@@ -26,5 +26,8 @@
             "withTest": true
         }
     },
+    "customTemplates": {
+        "component": "templates/TemplateName.tsx"
+    },
     "usesStyledComponents": false
 }
