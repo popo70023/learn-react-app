@@ -5,8 +5,12 @@ import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import type { StylesConfig } from 'react-select';
 import Select from 'react-select';
-interface HorizontalMenuProps {}
-const items: string[] = ['Home', 'Payments', 'Customers','Products','Reports','Connect'];
+import { Link } from 'react-router-dom';
+interface horizontalMenuProps { }
+interface MenuButton{
+  name: string;
+  link: string;
+}
 const DropdownStyles: StylesConfig = {
   control: (provided) => ({
     ...provided,
@@ -34,12 +38,12 @@ const DropdownStyles: StylesConfig = {
   placeholder: (provided) => ({
     ...provided,
     color: 'black',
-    
+
   }),
   indicatorSeparator: () => ({
     display: 'none',
   }),
-  
+
 };
 const DropdownMenu = [
   { label: 'Text', value: 'Text' },
@@ -50,38 +54,46 @@ const DropdownClass={
   options:DropdownMenu,
   styles:DropdownStyles,
 };
-
-const HorizontalMenu: FC<HorizontalMenuProps> = () => {
+const HorizontalMenu: FC<horizontalMenuProps> = () => {
+  const menuButtons: MenuButton[] = [
+    { name: 'Home', link: '/' },
+    { name: 'Payments', link: '/' },
+    { name: 'Customers', link: '/' },
+    { name: 'Products', link: '/' },
+    { name: 'Reports', link: '/' },
+    { name: 'Connect', link: '/' },
+  ];
+  const [activeButton, setActiveButton] = React.useState('Home');
+  const onButtonClick = (buttonName: string) => {
+    setActiveButton(buttonName);   
+  };
   const [checked, setChecked] = React.useState(false);
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
-  const [activeButton, setActiveButton] = React.useState('');
 
-  const handleButtonClick = (item: string) => {
-    setActiveButton(item);
-  };
   return (
-    <div className="HorizontalMenu">
+    <div className="HorizontalMenu" data-testid="HorizontalMenu">
       <div className="ButtonGroup">
-        {items.map((item, index) => (
-          <button
+        {menuButtons.map((button, index) => (
+          <Link
             key={index}
-            className={`HorizontalMenuLink ${item} ${activeButton === item ? 'HorizonalMenuBtnActive' : ''}`}
-            onClick={() => {handleButtonClick(item);}}>
-          <div className="HorizonalMenuBtn">
-          {item}
-          </div>
-          </button>
+            className="HorizontalMenuLink"
+            to={button.link}
+            onClick={() => { onButtonClick(button.name); }}
+            >
+            <div className={`HorizontalMenuBtn  ${activeButton === button.name ? 'HorizontalMenuBtnActive' : ''} ${button.name}`}>{button.name}</div>
+          </Link>
         ))}
         <Select {...DropdownClass}/>
-        <button className="HorizontalMenuLink Developers"><div className="HorizonalMenuBtn">{'Developers'}</div></button>
-        <h5 className="HorizontalMenuLink TestMode"><div className="HorizonalMenuBtn">{'Test Mode'}</div></h5>
+        <button className="HorizontalMenuLink Developers"><div className="HorizontalMenuBtn">{'Developers'}</div></button>
+        <h5 className="HorizontalMenuLink TestMode"><div className="HorizontalMenuBtn">{'Test Mode'}</div></h5>
         <FormControlLabel
         control={<Switch checked={checked} onChange={handleChange} className="SwitchButton"/>}label=""/>
       </div>
+      
     </div>
   );
 };
+
 export default HorizontalMenu;
