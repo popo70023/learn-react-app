@@ -22,7 +22,7 @@ const DropdownStyles: StylesConfig = {
     fontSize: '14px',
     display: 'flex',
     alignItems: 'center',
-    marginLeft: '7px',
+    marginLeft: '12px',
   }),
   singleValue: (provided) => ({
     ...provided,
@@ -73,23 +73,23 @@ const HorizontalMenu: FC<horizontalMenuProps> = () => {
   };
 
   return (
-    <div className="HorizontalMenu" data-testid="HorizontalMenu">
-      <div className="ButtonGroup">
+    <div className="horizontal-menu" data-testid="horizontal-menu">
+      <div className="button-group">
         {menuButtons.map((button, index) => (
           <Link
             key={index}
-            className="HorizontalMenuLink"
+            className="horizontal-menu-link"
             to={button.link}
             onClick={() => { onButtonClick(button.name); }}
             >
-            <div className={`HorizontalMenuBtn  ${activeButton === button.name ? 'HorizontalMenuBtnActive' : ''} ${button.name}`}>{button.name}</div>
+            <div className={`horizontal-menu-btn  ${activeButton === button.name ? 'horizontal-menu-btn-active' : ''} ${button.name}`}>{button.name}</div>
           </Link>
         ))}
         <Select {...DropdownClass}/>
-        <button className="HorizontalMenuLink Developers"><div className="HorizontalMenuBtn">{'Developers'}</div></button>
-        <h5 className="HorizontalMenuLink TestMode"><div className="HorizontalMenuBtn">{'Test Mode'}</div></h5>
+        <button className="horizontal-menu-link developers"><div className="horizontal-menu-btn">{'Developers'}</div></button>
+        <h5 className="horizontal-menu-link test-mode"><div className="horizontal-menu-btn">{'Test Mode'}</div></h5>
         <FormControlLabel
-        control={<Switch checked={checked} onChange={handleChange} className="SwitchButton"/>}label=""/>
+        control={<Switch checked={checked} onChange={handleChange} className="switch-button"/>}label=""/>
       </div>
       
     </div>

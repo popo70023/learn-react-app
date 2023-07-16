@@ -1,4 +1,4 @@
-.HorizontalMenu {
+.horizontal-menu {
   display: flex;
   align-items: center;
   position: relative;
@@ -8,21 +8,18 @@
   background-color: white;
   border-radius: 20px;
   border: none;
-  top:218px;
-  right: 80px;
-  left: 80px;
-  bottom: 706px;
+  
   border-width: 0;
-  .ButtonGroup {
+  .button-group {
     position: absolute;
     left: 23px;
     top: 31px;
     display: flex;
     justify-content: center;
-    .HorizontalMenuLink {
+    .horizontal-menu-link {
       text-decoration: none;
       color: black;
-      .HorizontalMenuBtn {
+      .horizontal-menu-btn {
         width: 120px;
         height: 40px;
         background-color: white;
@@ -38,7 +35,7 @@
         line-height: normal;
         letter-spacing: 0.28px;
       }
-      .HorizontalMenuBtnActive{
+      .horizontal-menu-btn-active{
         background-color: #ff6966;
         color: white;
       }
@@ -46,19 +43,19 @@
         margin-left: 1px;
       }
       .Payments {
-        margin-left: 8px;
+        margin-left: 12px;
       }
       .Customers {
-        margin-left: 24px;
+        margin-left: 14px;
       }
       .Products {
-        margin-left: 19px;
+        margin-left: 12px;
       }
       .Reports {
-        margin-left: 10px;
+        margin-left: 12px;
       }
       .Connect {
-        margin-left: 10px;
+        margin-left: 14px;
       }
     }
     .Dropdown{
@@ -76,7 +73,7 @@
       line-height: normal;
       letter-spacing: 0.28px;
     }
-    .Developers{
+    .developers{
       width: 120px;
       height: 40px;
       text-decoration: none;
@@ -84,14 +81,14 @@
       background-color: transparent;
       border-radius: 10px;
       border: none;
-      margin-left: 56px;
+      margin-left: 64px;
       margin-top: -1px;
     }
-    .TestMode{
+    .test-mode{
       margin-left: -13px;
       margin-top: 0px;
     }
-    .SwitchButton {
+    .switch-button {
       margin-left: -13px;
       margin-top: -22px;
       transform: scale(1.3,1.6) !important;
