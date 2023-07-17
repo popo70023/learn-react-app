@@ -1,4 +1,3 @@
-import type React from 'react';
 import { lazy, Suspense } from 'react';
 
 const LazyHomePage = lazy(async () => await import('./HomePage'));
