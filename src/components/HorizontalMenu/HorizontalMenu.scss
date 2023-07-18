@@ -34,28 +34,11 @@
         font-weight: 550;
         line-height: normal;
         letter-spacing: 0.28px;
+        margin-left: 9px;
       }
       .horizontal-menu-btn-active{
         background-color: #ff6966;
         color: white;
-      }
-      .Home {
-        margin-left: 1px;
-      }
-      .Payments {
-        margin-left: 12px;
-      }
-      .Customers {
-        margin-left: 12px;
-      }
-      .Products {
-        margin-left: 12px;
-      }
-      .Reports {
-        margin-left: 12px;
-      }
-      .Connect {
-        margin-left: 14px;
       }
     }
     .Dropdown{
@@ -73,6 +56,34 @@
       line-height: normal;
       letter-spacing: 0.28px;
     }
+    .dropdown-prefix{
+      &__control{
+        border: none;
+        box-shadow: none;
+        height: 40px;
+        min-height: 40px;
+        width:100px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        margin-left: 12px;
+      }
+      &__single-value{
+        color: black;
+        margin-left: -38px;
+      }
+      &__dropdown-indicator{
+        color: black;
+        margin-left: -38px;
+        width: 32.5px;
+      }
+      &__placeholder{
+        color: black;
+      }
+      &__indicator-separator{
+        display: none;
+      }
+    }  
     .developers{
       width: 120px;
       height: 40px;
