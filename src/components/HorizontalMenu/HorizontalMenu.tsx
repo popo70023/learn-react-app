@@ -1,60 +1,18 @@
-import type { FC,useState } from 'react';
-import React from 'react';
+import  { FC , useState } from 'react';
 import './HorizontalMenu.scss';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import type { StylesConfig } from 'react-select';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
-interface horizontalMenuProps { }
+interface HorizontalMenuProps { }
 interface MenuButton{
   name: string;
   link: string;
 }
-const DropdownStyles: StylesConfig = {
-  control: (provided) => ({
-    ...provided,
-    border: 'none',
-    boxShadow: 'none',
-    height: '40px',
-    minHeight: '40px',
-    width:'100px',
-    fontSize: '14px',
-    display: 'flex',
-    alignItems: 'center',
-    marginLeft: '12px',
-  }),
-  singleValue: (provided) => ({
-    ...provided,
-    color: 'black',
-    marginLeft: '-38px',
-  }),
-  dropdownIndicator: (provided) => ({
-    ...provided,
-    color: 'black',
-    marginLeft: '-38px',
-    width: '32.5px',
-  }),
-  placeholder: (provided) => ({
-    ...provided,
-    color: 'black',
-
-  }),
-  indicatorSeparator: () => ({
-    display: 'none',
-  }),
-
-};
 const DropdownMenu = [
   { label: 'Text', value: 'Text' },
 ];
-const DropdownClass={
-  placeholder:"More", 
-  className:"Dropdown",
-  options:DropdownMenu,
-  styles:DropdownStyles,
-};
-const HorizontalMenu: FC<horizontalMenuProps> = () => {
+const HorizontalMenu: FC<HorizontalMenuProps> = () => {
   const menuButtons: MenuButton[] = [
     { name: 'Home', link: '/' },
     { name: 'Payments', link: '/' },
@@ -63,11 +21,11 @@ const HorizontalMenu: FC<horizontalMenuProps> = () => {
     { name: 'Reports', link: '/' },
     { name: 'Connect', link: '/' },
   ];
-  const [activeButton, setActiveButton] = React.useState('Home');
+  const [activeButton, setActiveButton] = useState('Home');
   const onButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);   
   };
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] =useState(false);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
@@ -82,16 +40,21 @@ const HorizontalMenu: FC<horizontalMenuProps> = () => {
             to={button.link}
             onClick={() => { onButtonClick(button.name); }}
             >
-            <div className={`horizontal-menu-btn  ${activeButton === button.name ? 'horizontal-menu-btn-active' : ''} ${button.name}`}>{button.name}</div>
+            <div className={`horizontal-menu-btn  ${activeButton === button.name ? 'horizontal-menu-btn-active' : ''} `}>{button.name}</div>
           </Link>
         ))}
-        <Select {...DropdownClass}/>
+        <Select
+        placeholder={"More"}
+        className="Dropdown"
+        options={DropdownMenu}
+        classNamePrefix="dropdown-prefix"
+        />
+
         <button className="horizontal-menu-link developers"><div className="horizontal-menu-btn">{'Developers'}</div></button>
-        <h5 className="horizontal-menu-link test-mode"><div className="horizontal-menu-btn">{'Test Mode'}</div></h5>
+        <p className="horizontal-menu-link test-mode"><div className="horizontal-menu-btn">{'Test Mode'}</div></p>
         <FormControlLabel
         control={<Switch checked={checked} onChange={handleChange} className="switch-button"/>}label=""/>
       </div>
-      
     </div>
   );
 };
