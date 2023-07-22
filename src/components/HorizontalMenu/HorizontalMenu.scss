@@ -8,7 +8,6 @@
   background-color: white;
   border-radius: 20px;
   border: none;
-  
   border-width: 0;
   .button-group {
     position: absolute;
@@ -34,29 +33,93 @@
         font-weight: 550;
         line-height: normal;
         letter-spacing: 0.28px;
-        margin-left: 9px;
+        margin-left: 8px;
       }
       .horizontal-menu-btn-active{
         background-color: #ff6966;
         color: white;
       }
     }
-    .Dropdown{
-      width: 120px;
-      height: 40px;
+    .menu-container {
+      text-align: center;
+    }
+    .dropdown-list {
+      height: 150px; 
+      min-width: 180px;
+      position: absolute;
+      overflow: hidden;
+      z-index: 0;  
+      text-align: left;
+    }
+    nav {
+      ul {
+        list-style: none;
+        margin-top: -2px;
+        margin-left: 2px;
+        font-family: "Nunito Sans", sans-serif;
+      }
+    }
+    
+    .dropdown {
+      display: inline-block;
       background-color: transparent;
       color: black;
       cursor: pointer;
-      border-radius: 10px;
       border: none;
-      font-family: "Nunito Sans", sans-serif;
       font-style: normal;
       font-size: 14px;
       font-weight: 550;
       line-height: normal;
       letter-spacing: 0.28px;
+      
+      
+      a {
+        display: block;
+        padding: 0 16px;
+        line-height: inherit;
+        cursor: pointer;
+      }
     }
+      
+    .dropdown-menu {
+      line-height: 45px;
+      
+    }
+      
+    .dropdown-menu-item {
+      display: inline-block;
+      position: relative;
     
+      &:hover {
+        background-color: transparent;
+        color: black;
+        .nav__submenu {
+          display: block;
+          background-color: white;
+        }
+      }
+    }
+        
+    .nav__submenu {
+      font-weight: 300;
+      text-transform: none;
+      display: none;
+      position: absolute;
+      width: 90px;
+      background-color: white;
+      margin-left:-40px ;
+      
+    }
+        
+    .nav__submenu-item {
+      &:hover {
+        background: rgba(#000, 0.1);
+      }
+    }
+    .dropdown-svg{
+      margin-top: 18px;
+      margin-left: -10px;
+    }
     .developers{
       width: 120px;
       height: 40px;
@@ -65,7 +128,7 @@
       background-color: transparent;
       border-radius: 10px;
       border: none;
-      margin-left: 64px;
+      margin-left: 77px;
       margin-top: -1px;
     }
     .test-mode{
@@ -74,8 +137,8 @@
     }
     .switch-button {
       margin-left: -13px;
-      margin-top: -22px;
-      transform: scale(1.3,1.6) !important;
+      margin-top: -14px;
+      transform: scale(1.3,1.6) ;
       .MuiSwitch-thumb {
         width: 16px;
         height: 13px;
@@ -96,3 +159,7 @@
     }  
   }
 }
+
+
+
+
