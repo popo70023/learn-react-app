@@ -17,6 +17,8 @@
     line-height: normal;
     letter-spacing: 0.28px;
    }
+   .Menu-Container{
+    position: relative;
     .Chart-menu-btn  {
     display: flex;
     position: relative;
@@ -27,9 +29,6 @@
     left:40px ;
     cursor: pointer;
     }   
-     .payment-link-btn{
-      top: 150px!important;
-    }
     .Chart-menu-btn-active{
       position: relative;
       font-size: 18px;
@@ -58,7 +57,7 @@
       font-size: 10px;
       top:70px;
       left:70px ;
-      color: orange;
+      color: gray;
       }
     .vertical-line-active  { 
       background-color: orange; 
@@ -67,13 +66,14 @@
     }
    .backgroundLine {
     position: absolute;
-    height: 59%;
+    height: 100%;
     width: 2px;
     background-color: gray;
     margin-right: 10px;
-    top: 10%;
+    top: 23%;
     left: 35px;
     opacity: 0.5;
     z-index: 1;
-    }
+    }}
+    
 }

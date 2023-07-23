@@ -31,10 +31,11 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
   return (
     <div className="ChartMenu" data-testid="ChartMenu">
       <span className="Tittle">Payments</span>
+      <div className='Menu-Container'>
+      <div>
       {menuButtons.map((button, index) => (
         <div key={index}>
           <Link
-            
             className="Chart-menu-link"
             to={button.menuButtonLink.link}
             onClick={() => { onButtonClick(button.menuButtonLink.name); }}
@@ -54,8 +55,9 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
         </div>
       ))}
       <div className="backgroundLine"></div>
+        </div>
+      </div>
     </div>
   );
-
 };
 export default ChartMenu;
