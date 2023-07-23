@@ -6,8 +6,8 @@ describe('<ChartMenu />', () => {
   test('it should mount', () => {
     render(<ChartMenu />);
     
-    const chartMenuElement = screen.getByTestId('ChartMenu');
+    const chartMenu = screen.getByTestId('ChartMenu');
 
-    expect(chartMenuElement).toBeInTheDocument();
+    expect(chartMenu).toBeInTheDocument();
   });
 });
