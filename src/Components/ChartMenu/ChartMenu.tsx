@@ -1,80 +1,59 @@
 import type React from 'react';
 import  { useState } from 'react';
 import './ChartMenu.scss';
+import { Link } from 'react-router-dom';
 
 interface ChartMenuProps {}
-
-const ChartMenu:React.FC<ChartMenuProps> = () => {
-
-  return (
-    <div className="ChartMenu" data-testid="ChartMenu"> 
-    <span className="Payments">Payments</span>
-    
-    <ParentText text="All-Payments">
-      <ChildText text="All-transactions" />
-    </ParentText>
-    <ParentText text="Fraud-Risk">
-      
-    </ParentText>
-    <ParentText text="Invoices">
-      
-    </ParentText>
-    <ParentText text="Subscriptions">
-  
-    </ParentText>
-    <ParentText text="Quotes">
-  
-    </ParentText>
-    <ParentText text="Payment-Link" className="last-parent-text">
-
-    </ParentText>
-  </div> 
-  );
-};
-
-interface ParentTextProps {
-  text: string;
-  children: React.ReactNode;
+interface MenuButton{
+  name: string;
+  link: string;
+  childText?: string[];
   className?: string;
-};
-
-const ParentText: React.FC<ParentTextProps> = ({ text, children, className }) => {
-  const [showChildren, setShowChildren] = useState(false);
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setShowChildren(!showChildren);
-    setClicked(!clicked);
-  };
-
-  return (
-    <div className={`parent-text-container ${className ?? ''}`}>
-      <div className={`line${clicked ? ' clicked' : ''}`}></div>
-      <div className={'backgroundLine'}></div>
-      <p className={`parent-text${clicked ? ' clicked' : ''}`} onClick={handleClick}>
-        {text}
-      </p>
-      {showChildren && <div className="child-container">{children}</div>}
-    </div>
-  );
-};
-
-interface ChildTextProps {
-  text: string;
 }
 
-const ChildText: React.FC<ChildTextProps> = ({ text }) => {
-  const [childClicked, setChildClicked] = useState(false);
-
-  const handleChildClick = () => {
-    setChildClicked(!childClicked);
+const ChartMenu: React.FC<ChartMenuProps> = () => {
+  const menuButtons: MenuButton[] = [
+  { name: 'All-Payments', link: '/', childText: ['All-transactions'] },
+  { name: 'Fraud-Risk', link: '/' },
+  { name: 'Invoices', link: '/' },
+  { name: 'Subscriptions', link: '/' },
+  { name: 'Quotes', link: '/' },
+  { name: 'Payment-Link', link: '/',className: 'payment-link-btn'  },
+    ];
+  const [activeButton, setActiveButton] = useState('Home');
+  const [showChildText, setShowChildText] = useState(false);
+  const onButtonClick = (buttonName: string, childText?: string[]) => {
+    setActiveButton(buttonName);
+    setShowChildText(childText !== undefined && childText.length > 0);
   };
-
-  return (
-    <p className={`child-text${childClicked ? ' clicked' : ''}`} onClick={handleChildClick}>
-      {text}
-    </p>
-  );
+    return(
+      <div className="ChartMenu" data-testid="ChartMenu">
+      <span className="Tittle">Payments</span>
+       {menuButtons.map((button, index) => (
+        <Link
+          key={index}
+          className="Chart-menu-link"
+          to={button.link}
+          onClick={() => { onButtonClick(button.name); }}
+          
+        >
+          <div className={`Chart-menu-btn  ${activeButton === button.name? 'Chart-menu-btn-active': ''}`}>{button.name}
+ 
+          </div>
+        </Link>
+      ))} 
+      {showChildText && (
+        <div className="childTextContainer">
+          {menuButtons.find((button) => button.name === 'All-Payments')?.childText?.map((text, index) => (
+            <p key={index} className="childText">
+              {text}
+            </p>
+          ))}
+        </div>
+      )}
+      <div className="backgroundLine"></div>
+    </div>
+     );
+ 
 };
-
 export default ChartMenu;

@@ -11,9 +11,7 @@
     left: 5px;
     bottom: 100px;
     border-width: 0;
-  }
-  
-  .Payments {
+    .Tittle {
     position: absolute;
     left: 24px;
     color: black;
@@ -22,34 +20,50 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.28px;
-  }
+   }
   
-  .parent-text {
+    .Chart-menu-btn  {
     position: relative;
     font-size: 18px;
     color: black;
-    top: 50px;
-    left: 50px;
+    top:60px;
+    margin-top: 30px;
+    
+    right:40px ;
     cursor: pointer;
-  }
-  
-  .last-parent-text {
-    position: relative;
-    font-size: 18px;
-    color: black;
-    top: 40px;
-    cursor: pointer;
-  }
-  
-  .parent-text.clicked {
+      .vertical-line  {
+      height: 30px;
+      width: 2px;
+      margin-right: 10px;
+      top: 50px;
+      left: 35px;
+      opacity: 0.3;
+      z-index: 1; 
+      }
+    }
+  .payment-link-btn{
+        top: 100px;
+        color: rgb(233, 10, 10);
+    }
+  .Chart-menu-btn-active{
     color: orange;
-  }
-  
-  .parent-text-container {
-    display: flex;
-    align-items: center;
-  }
-  .backgroundLine {
+    .childText{
+    font-size: 14px;
+      }
+    .vertical-line  {
+    position: relative;
+    color: orange;
+    height:30px;
+    width: 2px;
+    margin-right: 10px;
+    top: 50px;
+    left: 35px;
+    opacity: 0;
+    z-index: 3;
+      }
+    }
+    
+   .backgroundLine {
     position: absolute;
     height: 57%;
     width: 2px;
@@ -58,34 +72,6 @@
     top: 10%;
     left: 35px;
     opacity: 1;
-  }
-  
-  
-  .line {
-    position: relative;
-    height: 30px;
-    width: 2px;
-    margin-right: 10px;
-    top: 50px;
-    left: 35px;
-    opacity: 0.5;
-    
-  }
-  
-  .line.clicked {
-    opacity: 1;
-    background-color: orange;
-    z-index: 3;
-  }
-  
-  .child-container {
-    margin-top: 10px;
-  }
-  
-  .child-text {
-    position: relative;
-    font-size: 14px;
-    top: 70px;
-    right: 25px;
-    cursor: pointer;
-  }
+    z-index: 2;
+    }
+}
