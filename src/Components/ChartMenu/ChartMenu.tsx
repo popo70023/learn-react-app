@@ -25,7 +25,7 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [showChildText, setShowChildText] = useState(false);
   const onButtonClick = (buttonName: string, childText?: string[]) => {
-    setActiveButton((prevActiveButton) => (prevActiveButton === buttonName ? null : buttonName));
+    setActiveButton((prevActiveButton) => (prevActiveButton === buttonName ? buttonName : buttonName));
     setShowChildText(childText !== undefined && childText.length > 0);
   };
   return (
