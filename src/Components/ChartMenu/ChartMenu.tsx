@@ -5,7 +5,7 @@ interface ChartMenuProps{};
 const ChartMenu: React.FC<ChartMenuProps> = () => {
 
     return (
-        <div className="rectangle"> 
+      <div className="rectangle" data-testid="ChartMenu">
         <span className="Payments">Payments</span>
         
         <ParentText text="All-Payments">
