@@ -39,7 +39,7 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
             to={button.menuButtonLink.link}
             onClick={() => { onButtonClick(button.menuButtonLink.name); }}
           >
-            <div className={`Chart-menu-btn  ${activeButton === button.menuButtonLink.name ? 'Chart-menu-btn-active' : ''}`}>
+            <div className={`Chart-menu-btn  ${button.menuButtonLink.name === 'Payment-Link' ? 'payment-link-btn' : ''} ${activeButton === button.menuButtonLink.name ? 'Chart-menu-btn-active' : ''}`}>
               <div className={`vertical-line ${activeButton === button.menuButtonLink.name ?'vertical-line-active':'' }`}></div>
               {button.menuButtonLink.name} </div>
           </Link>
