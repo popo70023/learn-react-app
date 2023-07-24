@@ -29,8 +29,18 @@
             height: inherit;
             width: 168px;
             display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
             align-content: center;
-            justify-content: space-evenly;
+            .user-switch-content {
+                width: inherit;
+                display: flex;
+                justify-content: space-between;
+
+                .user-switch-text {
+                    display: flex;
+                }
+            }
         }
 
         .activate-button {
@@ -53,16 +63,23 @@
             border-radius: 10px;
 
             .search-input {
-                width: 80%;
+                position: absolute;
+                width: inherit;
+                height: inherit;
                 border-style: none;
                 border-radius: 10px;
             }
 
             .search-button {
                 position: absolute;
-                right: 0;
+                right: 0px;
                 height: inherit;
-                background-color: #FFFFFF;
+                background-color: transparent;
+
+                &:hover {
+                    background-blend-mode: multiply;
+                    background-color: gainsboro;
+                }
             }
         }
 

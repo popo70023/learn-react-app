@@ -22,9 +22,13 @@ const Header: FC<HeaderProps> = () => (
     </button>
     <div className="tool-bar">
       <button className="user-switch">
-        <img src={userIcon} />
-        Name User
-        <img src={dropDownIconBlue} />
+        <div className="user-switch-content">
+          <img src={userIcon} />
+          <div className="user-switch-text">
+            <p>Name User</p>
+            <img src={dropDownIconBlue} />
+          </div>
+        </div>
       </button>
       <button className="activate-button">
         Activate account ➜
@@ -33,7 +37,7 @@ const Header: FC<HeaderProps> = () => (
         <input className="search-input">
 
         </input>
-        <button className="search-button">
+        <button className="search-button" onClick={(e) => {console.log('hellow');}}>
           <img src={searchIcon} />
           Search
         </button>
