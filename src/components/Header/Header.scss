@@ -1,0 +1,110 @@
+.Header {
+    .logo-bar {
+        position: absolute;
+        left: 87px;
+        top: 81px;
+    }
+
+    .beta-hint {
+        position: absolute;
+        left: 1275px;
+        top: 67px;
+        background-color: #A4D8F7;
+        color: #0C1E5B;
+        width: 85px;
+        height: 26px;
+    }
+
+    .tool-bar {
+        position: absolute;
+        left: 80px;
+        top: 133px;
+        display: flex;
+        height: 48px;
+
+        .user-switch {
+            position: absolute;
+            background-color: #FFFFFF;
+            color: #0C1E5B;
+            height: inherit;
+            width: 168px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: center;
+            .user-switch-content {
+                width: inherit;
+                display: flex;
+                justify-content: space-between;
+
+                .user-switch-text {
+                    display: flex;
+                }
+            }
+        }
+
+        .activate-button {
+            position: absolute;
+            left: 268px;
+            background-color: #A4D8F7;
+            color: #0C1E5B;
+            height: inherit;
+            width: 168px;
+        }
+
+        .search-frame {
+            position: absolute;
+            left: 454px;
+            display: flex;
+            background-color: #FFFFFF;
+            color: #0C1E5B;
+            height: inherit;
+            width: 501px;
+            border-radius: 10px;
+
+            .search-input {
+                position: absolute;
+                width: inherit;
+                height: inherit;
+                border-style: none;
+                border-radius: 10px;
+            }
+
+            .search-button {
+                position: absolute;
+                right: 0px;
+                height: inherit;
+                background-color: transparent;
+
+                &:hover {
+                    background-blend-mode: multiply;
+                    background-color: gainsboro;
+                }
+            }
+        }
+
+        .create-button {
+            position: absolute;
+            left: 975px;
+            background-color: #FF6966;
+            color: #FFFFFF;
+            height: inherit;
+            width: 106px;
+        }
+    }
+
+    .icon-bar {
+        position: absolute;
+        left: 1176px;
+        top: 145px;
+        display: flex;
+        justify-content: space-between;
+        height: 18px;
+        width: 184px;
+    }
+
+    button {
+        border-style: none;
+        border-radius: 10px;
+    }
+}
