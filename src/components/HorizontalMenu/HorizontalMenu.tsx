@@ -2,7 +2,6 @@ import  { FC , useState } from 'react';
 import './HorizontalMenu.scss';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import type{ StylesConfig } from 'react-select';
 import { Link } from 'react-router-dom';
 interface HorizontalMenuProps { }
 interface MenuButton{
@@ -23,11 +22,11 @@ const items: string[] = ['Home', 'Payments', 'Customers','Products','Reports'];
 const HorizontalMenu: FC<HorizontalMenuProps> = () => {
   const menuButtons: MenuButton[] = [
     { name: 'Home', link: '/' },
-    { name: 'Payments', link: '/' },
-    { name: 'Customers', link: '/' },
-    { name: 'Products', link: '/' },
-    { name: 'Reports', link: '/' },
-    { name: 'Connect', link: '/' },
+    { name: 'Payments', link: '/Payments' },
+    { name: 'Customers', link: '/Customers' },
+    { name: 'Products', link: '/Products' },
+    { name: 'Reports', link: '/Reports' },
+    { name: 'Connect', link: '/Connect' },
   ];
   const [clicked, setClicked] = useState(false);
 
