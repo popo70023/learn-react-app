@@ -1,4 +1,8 @@
 .Header {
+    display: block;
+    width: 100%;
+    height: 190px;
+
     .logo-bar {
         position: absolute;
         left: 87px;
@@ -29,13 +33,13 @@
             height: inherit;
             width: 168px;
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
             align-content: center;
+
             .user-switch-content {
                 width: inherit;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-evenly;
 
                 .user-switch-text {
                     display: flex;
