@@ -15,7 +15,7 @@ interface MenuButton {
 }
 const ChartMenu: React.FC<ChartMenuProps> = () => {
   const menuButtons: MenuButton[] = [
-    { menuButtonLink: {name: 'All-Payments', link: '/'}, childs: [{name:'All-transactions', link: '/'}, {name:'132', link: '/'}, {name:'acvav', link: '/'}] },
+    { menuButtonLink: {name: 'All-Payments', link: '/'}, childs: [{name:'All-transactions', link: '/All-transactions'}] },
     { menuButtonLink: {name:'Fraud-Risk', link: '/'} },
     { menuButtonLink: {name:'Invoices', link: '/'} },
     { menuButtonLink: {name:'Subscriptions', link: '/'} },
