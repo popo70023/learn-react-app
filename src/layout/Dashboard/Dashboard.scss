@@ -1,8 +1,10 @@
-body {
-    background: linear-gradient(135deg, #FFE7E7, #D1DCEB, #E9F2FD);
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+.Dashboard {
+    position: relative;
+    width: 1280px; 
+    margin: 0 auto;
+    .header{
+        position: relative;
+        margin-left: -80px;
+        margin-bottom: 28px;
+    }
 }
-
-.Dashboard {}
