@@ -3,10 +3,12 @@ import HomePage from "./pages/HomePage/HomePage";
 import PaymentsPage from "./pages/PaymentsPage/PaymentsPage";
 
 const AppRoutes: React.FC = () => (
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/Payments" element={<PaymentsPage/>} />
-            <Route path="/Customers" element={<HomePage />} />
+     <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Payments" element={<PaymentsPage/>} >
+            <Route path="All-transactions" element={<PaymentsPage/>} />
+           </Route>
+        <Route path="/Customers" element={<HomePage />} />
         </Routes>
 );
 

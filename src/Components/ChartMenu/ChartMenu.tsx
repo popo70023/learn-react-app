@@ -15,12 +15,12 @@ interface MenuButton {
 }
 const ChartMenu: React.FC<ChartMenuProps> = () => {
   const menuButtons: MenuButton[] = [
-    { menuButtonLink: {name: 'All-Payments', link: '/'}, childs: [{name:'All-transactions', link: '/All-transactions'}] },
-    { menuButtonLink: {name:'Fraud-Risk', link: '/'} },
-    { menuButtonLink: {name:'Invoices', link: '/'} },
-    { menuButtonLink: {name:'Subscriptions', link: '/'} },
-    { menuButtonLink: {name:'Quotes', link: '/'} },
-    { menuButtonLink: {name:'Payment-Link', link: '/'}, className: 'payment-link-btn' },
+    { menuButtonLink: {name: 'All-Payments', link: '/Payments'}, childs: [{name:'All-transactions', link: '/Payments/All-transactions'}] },
+    { menuButtonLink: {name:'Fraud-Risk', link: '/Payments'} },
+    { menuButtonLink: {name:'Invoices', link: '/Payments'} },
+    { menuButtonLink: {name:'Subscriptions', link: '/Payments'} },
+    { menuButtonLink: {name:'Quotes', link: '/Payments'} },
+    { menuButtonLink: {name:'Payment-Link', link: '/Payments'}, className: 'payment-link-btn' },
   ];
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [showChildText, setShowChildText] = useState(false);

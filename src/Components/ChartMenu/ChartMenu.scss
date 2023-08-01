@@ -1,9 +1,9 @@
 .ChartMenu {
     position: relative;
     width: 300px;
-    height: 650px;
+    height: 500px;
     border: 1px solid black;
-    background-color: rgb(248, 245, 245);
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     border: none;
     border-width: 0;
@@ -33,9 +33,6 @@
       position: relative;
       font-size: 18px;
       color: orange;
-      .payment-link-btn{
-        top: 150px;
-      }
       top:60px;
       right:40px ;
       cursor: pointer;
