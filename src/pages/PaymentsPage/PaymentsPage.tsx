@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './PaymentsPage.scss';
-import ChartMenu from '../../Components/ChartMenu/ChartMenu';
+import ChartMenu from '../../components/ChartMenu/ChartMenu';
 interface PaymentsPageProps {}
 
 const PaymentsPage: FC<PaymentsPageProps> = () => (
