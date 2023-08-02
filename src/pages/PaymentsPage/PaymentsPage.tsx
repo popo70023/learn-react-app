@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import './PaymentsPage.scss';
-import ChartMenu from '../../components/ChartMenu/ChartMenu';
+import Payments from '../../layout/Payments/Payments';
 interface PaymentsPageProps {}
 
 const PaymentsPage: FC<PaymentsPageProps> = () => (
   <div className="PaymentsPage" data-testid="PaymentsPage">
-    <ChartMenu/>
+    <Payments />
   </div>
 );
 
