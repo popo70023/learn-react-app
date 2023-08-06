@@ -1,0 +1,150 @@
+.PaymentsHeader {
+    position: relative;
+    background-color: white;
+    width: 955px;
+    height: 606px;
+    border-radius: 20px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    font-family: "Nunito Sans", sans-serif;
+
+    .button-hr {
+        position: relative;
+        margin-top: -8px;
+        align-items: center;
+        width: 887px;
+        border-color: #EFF1F8;
+        z-index: 0;
+    }
+
+    .header-button {
+        position: relative;
+        display: flex;
+        margin-left: 41px;
+
+        .payments-header-title {
+            position: relative;
+            color: var(--primary-0-c-1-e-5-b-text, #0C1E5B);
+            margin-top: 40px;
+            margin-right: 400px;
+        }
+
+        .horizontal-menu-btn-style {
+            background: #FFF;
+            color: #888FA7;
+        }
+
+        .horizontal-menu-btn-active {
+            background-color: #ff6966;
+            color: white;
+        }
+
+        .button {
+            position: relative;
+            margin-top: 40px;
+            margin-left: 14px;
+            border-radius: 6px;
+            border: 1px solid #EFF1F8;
+            width: 90px;
+            height: 30px;
+            margin-top: 46px;
+
+            .button-display {
+                display: flex;
+                align-items: center;
+
+                .button-svg {
+                    margin: auto;
+                    position: relative;
+                }
+
+                .button-text {
+                    margin: auto;
+                    position: relative;
+                    margin-left: -5px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    letter-spacing: 0.24px;
+                }
+            }
+        }
+
+        .created-payment {
+            position: relative;
+            margin-top: 46px;
+            margin-left: 14px;
+            width: 150px;
+            height: 30px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: var(--primary-ff-6966-primary-active, #FF6966);
+            color: #FFF;
+            display: flex;
+            border: none;
+            align-items: center;
+
+            &.created-payment-active {
+                background: #FFF;
+                color: #888FA7;
+            }
+
+            .add-text {
+                position: relative;
+                margin: auto;
+                font-size: 20px;
+            }
+
+            .created-payment-text {
+                position: relative;
+                margin: auto;
+                margin-left: -5px;
+                font-size: 12px;
+                letter-spacing: 0.24px;
+            }
+        }
+    }
+
+    .payments-button-group {
+        position: relative;
+        margin-left: 27px;
+        margin-top: 22px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.24px;
+        background-color: transparent;
+        display: flex;
+
+        .payments-button {
+            position: relative;
+            margin-left: 0px;
+            background-color: transparent;
+            border: none;
+            z-index: 1;
+
+            .payments-button-hr {
+                align-items: center;
+                width: 111px;
+            }
+
+            .button-hr-style {
+                border-color: #FF6966;
+            }
+
+            .button-hr-active {
+                border-color: transparent;
+            }
+        }
+
+        .payments-button-style {
+            color: var(--primary-888-fa-7-active, #888FA7);
+        }
+
+        .payments-button-active {
+            color: #FF6966;
+        }
+    }
+}
