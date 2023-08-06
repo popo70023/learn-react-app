@@ -29,6 +29,7 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
     setShowChildText(childText !== undefined && childText.length > 0);
   };
   return (
+    
     <div className="ChartMenu" data-testid="ChartMenu">
       <span className="Tittle">Payments</span>
       <div className='Menu-Container'>
@@ -42,7 +43,8 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
           >
             <div className={`Chart-menu-btn  ${button.menuButtonLink.name === 'Payment-Link' ? 'payment-link-btn' : ''} ${activeButton === button.menuButtonLink.name ? 'Chart-menu-btn-active' : ''}`}>
               <div className={`vertical-line ${activeButton === button.menuButtonLink.name ?'vertical-line-active':'' }`}></div>
-              {button.menuButtonLink.name} </div>
+              {button.menuButtonLink.name} 
+              </div>
           </Link>
           {button.childs !== undefined &&activeButton === button.menuButtonLink.name ? button.childs.map((child, childTextIndex) => (
             <Link

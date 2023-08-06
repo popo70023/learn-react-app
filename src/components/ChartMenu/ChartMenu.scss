@@ -19,6 +19,9 @@
    }
    .Menu-Container{
     position: relative;
+    .Chart-menu-link{ 
+      text-decoration: none;
+    }
     .Chart-menu-btn  {
     display: flex;
     position: relative;
@@ -27,6 +30,7 @@
     top:65px;
     margin-top: 30px;
     left:40px ;
+    text-decoration:none; 
     cursor: pointer;
     }   
     .Chart-menu-btn-active{
@@ -49,6 +53,7 @@
         z-index: 2;
       }
     .child-text{
+      text-decoration: none;
       position: relative;
       display: flex;
       font-size: 10px;
