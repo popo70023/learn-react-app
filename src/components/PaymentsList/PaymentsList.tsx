@@ -51,11 +51,13 @@ const PaymentsList: FC<PaymentsListProps> = () => {
     <div className="PaymentsList" data-testid="PaymentsList">
       <div className="PaymentsList-Container">
         <div className="tittle-Container ">
+          <div className='all-checkbox'>
           <Checkbox
-            className="checkbox"
+            className="checkbox  all-checkbox"
             checked={allCheckboxChecked}
             onChange={handleAllCheckboxChange}
           />
+          </div>
           <p className="title">Product</p>
           <p className="title">Performance</p>
           <p className="title">Stock</p>
@@ -69,7 +71,7 @@ const PaymentsList: FC<PaymentsListProps> = () => {
                 <Checkbox
                   className="checkbox"
                   checked={checkboxStates[index]}
-                  onChange={() => handleCheckboxChange(index)}
+                  onChange={() => {handleCheckboxChange(index);}}
                 />
                 <p className='list-margin-Product'>{item.Product.split('\n').map((line, i) => (
                   <React.Fragment key={i}>
@@ -91,7 +93,7 @@ const PaymentsList: FC<PaymentsListProps> = () => {
                     min={0}
                     max={100}
                     className={`slider-wrapper ${checkboxStates[index] ? 'slider-selected' : 'slider-noselected'}`}
-                    onMouseDown={(e) => e.preventDefault()}
+                    onMouseDown={(e) => {e.preventDefault();}}
                   />
                 </div>
                 <p className='list-margin'>{item.Stock}</p>
@@ -100,7 +102,7 @@ const PaymentsList: FC<PaymentsListProps> = () => {
                   control={
                     <Switch
                       checked={switchStates[index]}
-                      onChange={() => handleSwitchChange(index)}
+                      onChange={() => {handleSwitchChange(index);}}
                       className="switch-button"
                     />
                   }

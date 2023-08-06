@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import './PaymentsHeader.scss';
+import PaymentsList from '../PaymentsList/PaymentsList';
 
 interface PaymentsHeaderProps {
   activeButton: string;
@@ -21,11 +22,6 @@ const PaymentsHeader: FC<PaymentsHeaderProps> = ({ activeButton, onButtonClick }
   const handleButtonClickCreatePayment = () => {
     setIsClickedCreatePayment(!isClickedCreatePayment);
   };
-
-  // const [activeButton, setActiveButton] = useState('All');
-  // const onButtonClick = (buttonName: string) => {
-  //   setActiveButton(buttonName);   
-  // };
   return (
     <div className="PaymentsHeader" data-testid="PaymentsHeader">
       <div className='header-button'>
@@ -59,7 +55,7 @@ const PaymentsHeader: FC<PaymentsHeaderProps> = ({ activeButton, onButtonClick }
             <p className='button-text'>Export</p>
           </div>
         </button>
-        <button className={isClickedCreatePayment?'created-payment created-payment-active':'created-payment '}  onClick={handleButtonClickCreatePayment}>
+        <button className={isClickedCreatePayment ? 'created-payment created-payment-active' : 'created-payment '} onClick={handleButtonClickCreatePayment}>
           <p className='add-text'>+</p>
           <p className='created-payment-text'>Create Payment</p>
         </button>
@@ -68,17 +64,18 @@ const PaymentsHeader: FC<PaymentsHeaderProps> = ({ activeButton, onButtonClick }
       <div className='payments-button-group'>
         {[{ name: 'All' }, { name: 'Succeeded' }, { name: 'Refunded' }, { name: 'Uncaptured' }].map((item, index) => (
           <div key={index}>
-          <button 
-          onClick={() => { onButtonClick(item.name); }}
-          className={`payments-button  ${activeButton === item.name ? 'payments-button-active' : 'payments-button-style'} `} >
-            {item.name}
-            <hr className={`payments-button-hr  ${activeButton === item.name ? 'button-hr-style' : 'button-hr-active'} `}></hr>
-          </button>
-          
+            <button
+              onClick={() => { onButtonClick(item.name); }}
+              className={`payments-button  ${activeButton === item.name ? 'payments-button-active' : 'payments-button-style'} `} >
+              {item.name}
+              <hr className={`payments-button-hr  ${activeButton === item.name ? 'button-hr-style' : 'button-hr-active'} `}></hr>
+            </button>
+
           </div>))}
 
       </div>
       <hr className='button-hr' />
+      {activeButton==='All' ? <PaymentsList /> : null}
     </div>
   );
 };

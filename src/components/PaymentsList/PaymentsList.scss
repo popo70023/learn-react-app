@@ -1,5 +1,11 @@
 .PaymentsList {
-    background-color: white;
+  position: relative;
+    background-color: transparent;
+    width: 910px;
+    height: 100%;
+    color: #0C1E5B;
+    font-size: 12px;
+    margin-left: 21px;
     .MuiCheckbox-root.Mui-checked {
         color: orange;
       }
@@ -7,8 +13,13 @@
         display: flex;
         background-color:#EDF4FB;
         border-radius: 20px;
+      .all-checkbox{
+        position: relative;
+        margin-left: 9px;
+      }
       .title{
-        margin-left:125px;
+        margin-left:113px;
+
       }
 
     }
@@ -40,6 +51,7 @@
       .list-margin-Product{
         margin-left:100px;
         text-align:left;
+        font-size: 14px;
       }
       .switch-button{
         margin-left:100px;
