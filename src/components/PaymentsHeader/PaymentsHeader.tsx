@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import './PaymentsHeader.scss';
 import PaymentsList from '../PaymentsList/PaymentsList';
+import PaymentsChart from '../PaymentsChart/PaymentsChart';
 
 interface PaymentsHeaderProps {
   activeButton: string;
@@ -75,7 +76,7 @@ const PaymentsHeader: FC<PaymentsHeaderProps> = ({ activeButton, onButtonClick }
 
       </div>
       <hr className='button-hr' />
-      {activeButton==='All' ? <PaymentsList /> : null}
+      {activeButton==='All' ? <PaymentsList /> : <PaymentsChart />}
     </div>
   );
 };

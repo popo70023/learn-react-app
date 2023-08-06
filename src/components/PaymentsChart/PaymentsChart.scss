@@ -1,0 +1,28 @@
+.PaymentsChart {
+    position: relative;
+    background-color: transparent;
+    width: 910px;
+    height: 460px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+
+    .chart {
+        width: 380px;
+        height: 330px;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-content: space-around;
+
+        .header {
+            width: 340px;
+            color: #0C1E5B;
+            display: flex;
+            justify-content: space-between;
+            font-family: Nunito Sans;
+            font-size: 16px;
+        }
+    }
+}
