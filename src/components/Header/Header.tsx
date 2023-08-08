@@ -24,10 +24,8 @@ const Header: FC<HeaderProps> = () => (
       <button className="user-switch">
         <div className="user-switch-content">
           <img src={userIcon} />
-          <div className="user-switch-text">
-            <p>Name User</p>
-            <img src={dropDownIconBlue} />
-          </div>
+          <p>Name User</p>
+          <img src={dropDownIconBlue} />
         </div>
       </button>
       <button className="activate-button">
@@ -37,13 +35,13 @@ const Header: FC<HeaderProps> = () => (
         <input className="search-input">
 
         </input>
-        <button className="search-button" onClick={(e) => {console.log('hellow');}}>
+        <button className="search-button" onClick={(e) => { console.log('hellow'); }}>
           <img src={searchIcon} />
           Search
         </button>
       </div>
       <button className="create-button">
-        Create
+        <p>Create</p>
         <img src={dropDownIconWhite} />
       </button>
     </div>

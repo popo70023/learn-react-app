@@ -14,6 +14,7 @@
         top: 67px;
         background-color: #A4D8F7;
         color: #0C1E5B;
+        font-size: 10px;
         width: 85px;
         height: 26px;
     }
@@ -33,16 +34,12 @@
             width: 168px;
             display: flex;
             flex-wrap: wrap;
-            align-content: center;
+            align-items: center;
 
             .user-switch-content {
                 width: inherit;
                 display: flex;
                 justify-content: space-evenly;
-
-                .user-switch-text {
-                    display: flex;
-                }
             }
         }
 
@@ -60,7 +57,6 @@
             left: 454px;
             display: flex;
             background-color: #FFFFFF;
-            color: #0C1E5B;
             height: inherit;
             width: 501px;
             border-radius: 10px;
@@ -78,11 +74,11 @@
                 right: 0px;
                 height: inherit;
                 background-color: transparent;
-
-                &:hover {
-                    background-blend-mode: multiply;
-                    background-color: gainsboro;
-                }
+                color: #0C1E5B;
+                font-size: 14px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
             }
         }
 
@@ -93,6 +89,9 @@
             color: #FFFFFF;
             height: inherit;
             width: 106px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
         }
     }
 
@@ -109,5 +108,7 @@
     button {
         border-style: none;
         border-radius: 10px;
+        font-weight: bold;
+        font-size: 12px;
     }
 }
