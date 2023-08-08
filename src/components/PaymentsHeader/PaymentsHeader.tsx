@@ -76,7 +76,7 @@ const PaymentsHeader: FC<PaymentsHeaderProps> = ({ activeButton, onButtonClick }
 
       </div>
       <hr className='button-hr' />
-      {activeButton==='All' ? <PaymentsList /> : <PaymentsChart />}
+      {activeButton==='All' ? <PaymentsList /> : ''}
     </div>
   );
 };

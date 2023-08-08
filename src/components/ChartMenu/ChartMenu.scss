@@ -9,24 +9,36 @@
     border-width: 0;
     .Tittle {
     position: absolute;
-    left: 24px;
-    color: black;
-    font-size: 22px;
+    top:42px;
+    left: 35px;
+    color: var(--primary-0-c-1-e-5-b-text, #0C1E5B);
+    font-family: Nunito Sans;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    letter-spacing: 0.28px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    color: rgba(12, 30, 91, 1);
    }
    .Menu-Container{
     position: relative;
+    left: 20px;
+    top:20px;
     .Chart-menu-link{ 
       text-decoration: none;
     }
     .Chart-menu-btn  {
     display: flex;
     position: relative;
-    font-size: 18px;
-    color: black;
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    color:#888FA7;
     top:65px;
     margin-top: 30px;
     left:40px ;
@@ -35,8 +47,8 @@
     }   
     .Chart-menu-btn-active{
       position: relative;
-      font-size: 18px;
-      color: orange;
+      font-size: 12px;
+      color: #FF6966;
       top:60px;
       right:40px ;
       cursor: pointer;
@@ -46,8 +58,9 @@
       }
       .vertical-line{
         position: absolute;
-        left: -5px;
+        left: -10px;
         width: 2px;
+        bottom:-7px;
         height: 30px;
         opacity: 0.3;
         z-index: 2;
@@ -59,10 +72,16 @@
       font-size: 10px;
       top:70px;
       left:70px ;
-      color: gray;
+      color: var(--primary-888-fa-7-active, #888FA7);
+      font-family: Nunito Sans;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.24px;
       }
     .vertical-line-active  { 
-      background-color: orange; 
+      background-color: #FF6966; 
       opacity: 1;
       z-index: 3;
     }
@@ -70,10 +89,10 @@
     position: absolute;
     height: 100%;
     width: 2px;
-    background-color: gray;
+    background-color: #EFF1F8;
     margin-right: 10px;
     top: 23%;
-    left: 35px;
+    left: 30px;
     opacity: 0.5;
     z-index: 1;
     }}

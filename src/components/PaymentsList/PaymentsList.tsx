@@ -58,11 +58,11 @@ const PaymentsList: FC<PaymentsListProps> = () => {
             onChange={handleAllCheckboxChange}
           />
           </div>
-          <p className="title">Product</p>
-          <p className="title">Performance</p>
-          <p className="title">Stock</p>
-          <p className="title">Price</p>
-          <p className="title">Status</p>
+          <p className="title-Product">Product</p>
+          <p className="title-Performance">Performance</p>
+          <p className="title-Stock">Stock</p>
+          <p className="title-Price">Price</p>
+          <p className="title-Status">Status</p>
         </div>
         <div className="List-Container">
           {list.map((item, index) => (
@@ -73,6 +73,7 @@ const PaymentsList: FC<PaymentsListProps> = () => {
                   checked={checkboxStates[index]}
                   onChange={() => {handleCheckboxChange(index);}}
                 />
+                <div className="Product-container">
                 <p className='list-margin-Product'>{item.Product.split('\n').map((line, i) => (
                   <React.Fragment key={i}>
                     {line}
@@ -83,6 +84,7 @@ const PaymentsList: FC<PaymentsListProps> = () => {
                     SKU = 1432-TW
                   </div>
                 </p>
+                </div>
                 <div className='list-Performance'>
                   <p className='list-Performance-text'>{item.Performance} </p>
 

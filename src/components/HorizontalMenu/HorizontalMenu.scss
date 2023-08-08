@@ -143,6 +143,7 @@
         height: 13px;
         margin-top: 4px;
         margin-left:5px;
+        background-color: rgba(255, 255, 255, 1)
       }
       .MuiSwitch-root {
         display: flex;
@@ -154,6 +155,10 @@
       .MuiSwitch-track {
         border-radius: 20px;
         background-color: #DCE0ED;
+      }
+      .Mui-checked+.MuiSwitch-track {
+        border-radius: 20px;
+        background-color: rgba(153, 214, 251, 1);
       }
     }  
   }
