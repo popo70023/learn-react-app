@@ -12,7 +12,7 @@
     top:42px;
     left: 35px;
     color: var(--primary-0-c-1-e-5-b-text, #0C1E5B);
-    font-family: Nunito Sans;
+    font-style: normal;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -24,14 +24,14 @@
    .Menu-Container{
     position: relative;
     left: 20px;
-    top:20px;
+    top:px;
     .Chart-menu-link{ 
       text-decoration: none;
     }
     .Chart-menu-btn  {
     display: flex;
     position: relative;
-    font-family: Nunito Sans;
+    
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
@@ -73,7 +73,7 @@
       top:70px;
       left:70px ;
       color: var(--primary-888-fa-7-active, #888FA7);
-      font-family: Nunito Sans;
+      
       font-size: 12px;
       font-style: normal;
       font-weight: 400;
