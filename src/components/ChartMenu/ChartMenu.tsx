@@ -1,8 +1,8 @@
 import type React from 'react';
 import { useState } from 'react';
 import './ChartMenu.scss';
-import { Link } from 'react-router-dom';
-
+import { Link,Route,Routes } from 'react-router-dom';
+import PaymentsPage from '../../pages/PaymentsPage/PaymentsPage.lazy';
 interface ChartMenuProps { }
 interface MenuButtonLink{
   name: string;
@@ -11,7 +11,7 @@ interface MenuButtonLink{
 interface MenuButton {
   menuButtonLink: MenuButtonLink;
   childs?: MenuButtonLink[];
-  className?: string;
+ 
 }
 const ChartMenu: React.FC<ChartMenuProps> = () => {
   const menuButtons: MenuButton[] = [
@@ -20,7 +20,7 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
     { menuButtonLink: {name:'Invoices', link: '/Payments'} },
     { menuButtonLink: {name:'Subscriptions', link: '/Payments'} },
     { menuButtonLink: {name:'Quotes', link: '/Payments'} },
-    { menuButtonLink: {name:'Payment-Link', link: '/Payments'}, className: 'payment-link-btn' },
+    { menuButtonLink: {name:'Payment-Link', link: '/Payments'} },
   ];
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [showChildText, setShowChildText] = useState(false);
@@ -33,9 +33,9 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
     <div className="ChartMenu" data-testid="ChartMenu">
       <span className="Tittle">Payments</span>
       <div className='Menu-Container'>
-      <div>
+    
       {menuButtons.map((button, index) => (
-        <div key={index}>
+        <div key={index} className='test'>
           <Link
             className="Chart-menu-link"
             to={button.menuButtonLink.link}
@@ -57,8 +57,11 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
         </div>
       ))}
       <div className="backgroundLine"></div>
-        </div>
+       
       </div>
+            <Routes>
+              <Route path='/All-transactions' element={<div className='PaymentsPage'><PaymentsPage/></div>}/>
+            </Routes>
     </div>
   );
 };

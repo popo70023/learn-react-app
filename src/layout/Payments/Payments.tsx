@@ -1,8 +1,8 @@
 import { FC, useState  } from 'react';
 import './Payments.scss';
-import ChartMenu from '../../Components/ChartMenu/ChartMenu';
-import PaymentsHeader from '../../Components/PaymentsHeader/PaymentsHeader';
-import PaymentsList from '../../Components/PaymentsList/PaymentsList';
+import ChartMenu from '../../components/ChartMenu/ChartMenu';
+import PaymentsHeader from '../../components/PaymentsHeader/PaymentsHeader';
+import PaymentsList from '../../components/PaymentsList/PaymentsList';
 interface PaymentsProps {}
 
 const Payments: FC<PaymentsProps> = () => {
@@ -14,7 +14,7 @@ const Payments: FC<PaymentsProps> = () => {
 
  return ( 
   <div className="Payments" data-testid="Payments">
-    <ChartMenu />
+  
     <div className='payments-header'>
     <PaymentsHeader activeButton={activeButton} onButtonClick={handleButtonClick} />
     </div>

@@ -95,7 +95,7 @@ const PaymentsList: FC<PaymentsListProps> = () => {
                     min={0}
                     max={100}
                     className={`slider-wrapper ${checkboxStates[index] ? 'slider-selected' : 'slider-noselected'}`}
-                    onMouseDown={(e) => {e.preventDefault();}}
+     
                   />
                 </div>
                 <p className='list-margin'>{item.Stock}</p>
