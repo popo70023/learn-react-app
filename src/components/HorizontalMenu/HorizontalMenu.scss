@@ -1,3 +1,4 @@
+.horizontal-menu-model{
 .horizontal-menu {
   display: flex;
   align-items: center;
@@ -143,7 +144,6 @@
         height: 13px;
         margin-top: 4px;
         margin-left:5px;
-        background-color: rgba(255, 255, 255, 1)
       }
       .MuiSwitch-root {
         display: flex;
@@ -156,14 +156,21 @@
         border-radius: 20px;
         background-color: #DCE0ED;
       }
-      .Mui-checked+.MuiSwitch-track {
-        border-radius: 20px;
-        background-color: rgba(153, 214, 251, 1);
-      }
     }  
   }
 }
+.horizontal-menu-phone{
+  display: none;
+}
+@media (max-width: 395px){
+  .horizontal-menu{
+    display: none;
+  }
+  .horizontal-menu-phone{
+    display: inline;
+  }
+}
 
-
+}
 
 
