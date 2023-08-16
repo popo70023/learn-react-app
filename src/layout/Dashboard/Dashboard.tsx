@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import './Dashboard.scss';
-import Header from '../../Components/Header/Header';
-import HorizontalMenu from '../../Components/HorizontalMenu/HorizontalMenu';
+import Header from '../../components/Header/Header';
+import HorizontalMenu from '../../components/HorizontalMenu/HorizontalMenu';
 
 interface DashboardProps {}
 const Dashboard: FC<DashboardProps> = () => (
