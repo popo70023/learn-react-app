@@ -112,3 +112,47 @@
         font-size: 12px;
     }
 }
+
+@media all and  (max-width: 395px) {
+
+    .Header {
+        display: block;
+        height: 80px;
+    
+        .logo-bar {
+            left: 87px;
+            top: 10px;
+        }
+    
+        .beta-hint {
+            left: 370px;
+            top: 10px;
+        }
+    
+        .tool-bar {
+            left: 80px;
+            top: 50px;
+    
+            .user-switch {
+                display: none;
+            }
+    
+            .activate-button {
+                display: none;
+            }
+    
+            .search-frame {
+                left: 10px;
+                width: 250px;
+            }
+    
+            .create-button {
+                left: 280px;
+            }
+        }
+    
+        .icon-bar {
+            display: none;
+        }
+    }
+}
