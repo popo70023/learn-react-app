@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-import PaymentsPage from "./pages/PaymentsPage/PaymentsPage";
-import PaymentsList from "./components/PaymentsList/PaymentsList";
 import ChartMenu from "./components/ChartMenu/ChartMenu";
 const AppRoutes: React.FC = () => (
      <Routes>
