@@ -83,7 +83,7 @@ const HorizontalMenu: FC<HorizontalMenuProps> = () => {
               </li>
             </ul>
           </nav>
-          <svg className='dropdown-svg' xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+          <svg className={`dropdown-svg  ${showAboutMenu ? 'dropdown-svg-active' : ''}`}  xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
             <path d="M1 1L5 5L9 1" stroke="#0C1E5B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <button className="horizontal-menu-link developers"><div className="horizontal-menu-btn">{'Developers'}</div></button>

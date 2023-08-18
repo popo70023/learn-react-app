@@ -63,7 +63,8 @@ const HorizontalMenuResponsive: FC<HorizontalMenuResponsiveProps> = ({ handleBut
       <div className="button-group-responsive">
         {menuButtons.map((button, index) => (
           <div key={index}
-            className='horizontal-menu-scope' onClick={() => { onButtonClick(button.name); }}>
+            className='horizontal-menu-scope' onClick={() => { onButtonClick(button.name);
+                                                               setTimeout(handleButtonClick, 300); }}>
             <Link
               className="horizontal-menu-link"
               to={button.link}
@@ -76,7 +77,7 @@ const HorizontalMenuResponsive: FC<HorizontalMenuResponsiveProps> = ({ handleBut
           <ul className="dropdown-menu">
             <li className="dropdown-menu-item" onMouseLeave={handleLeave}>
               <a onMouseEnter={handleHover} >More
-                <svg className='dropdown-svg' xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <svg className={`dropdown-svg  ${showAboutMenu ? 'dropdown-svg-active' : ''}`} xmlns="http://www.w3.org/2000/svg " width="10" height="6" viewBox="0 0 10 6" fill="none">
                   <path d="M1 1L5 5L9 1" stroke="#0C1E5B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>

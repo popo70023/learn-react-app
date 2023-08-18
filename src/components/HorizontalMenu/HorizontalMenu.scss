@@ -119,6 +119,9 @@
     .dropdown-svg{
       margin-top: 18px;
       margin-left: -10px;
+      &.dropdown-svg-active {
+        transform: rotate(180deg);
+     }
     }
     .developers{
       width: 120px;
@@ -162,7 +165,7 @@
 .horizontal-menu-phone{
   display: none;
 }
-@media (max-width: 395px){
+@media (max-width: 768px){
   .horizontal-menu{
     display: none;
   }
