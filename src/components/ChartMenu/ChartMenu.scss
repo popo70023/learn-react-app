@@ -125,17 +125,20 @@
 
 
 
-@media all and  (max-width: 395px) {
+@media all and  (max-width: 768px) {
 
+  .vertical-menu{
+    display: none;
+  }
   .ChartMenu {
     display: flex;
     top: 20px;
-    width: 395px;
-    height: 20px;
-
-    border-radius: 10px;
+    width: 100%;
+    height: 46px;
+    border-radius: 0px;
+    align-items: center;
     overflow-x: auto;
-    overflow-y: hidden;
+    
   
 
     &::-webkit-scrollbar {
@@ -158,9 +161,9 @@
         align-items: center;
         vertical-align: text-top;
         top: 0px;
-        left: 20px;
-        height: 30px;
-        
+        left: 115px;
+        height: 46px;
+        background-color: white;
         .test {
           align-items: center;
           height: 30px;
@@ -200,8 +203,8 @@
   .triangle {
     position: relative;
     display: flex;
-    bottom: 10px;
-    left: 30px;
+    bottom: 35px;
+    left: 20px;
     width: 0;
     height: 0;
     border: 10px solid;
@@ -213,11 +216,11 @@
     position: relative;
     display: flex;
     top: 30px;
-    height: 20px;
-    width: 395px;
+    height: 46px;
+    width: 100%;
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+  
     border: none;
     border-width: 0;
     flex-direction: row;
