@@ -35,7 +35,7 @@ const Header: FC<HeaderProps> = () => (
         <input className="search-input">
 
         </input>
-        <button className="search-button" onClick={(e) => { console.log('hellow'); }}>
+        <button className="search-button">
           <img src={searchIcon} />
           Search
         </button>
