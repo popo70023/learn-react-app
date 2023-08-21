@@ -9,7 +9,9 @@ const Dashboard: FC<DashboardProps> = () => (
     <div className="header">
     <Header />
     </div>
+    <div className="horizontal-menu">
     <HorizontalMenu />
+    </div>
   </div>
 );
 

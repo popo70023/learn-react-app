@@ -11,8 +11,8 @@ interface MenuButtonLink {
 interface MenuButton {
   menuButtonLink: MenuButtonLink;
   childs?: MenuButtonLink[];
-
 }
+
 const ChartMenu: React.FC<ChartMenuProps> = () => {
   const menuButtons: MenuButton[] = [
     { menuButtonLink: { name: 'All-Payments', link: '/Payments' }, childs: [{ name: 'All-transactions', link: '/Payments/All-transactions' }] },
@@ -22,14 +22,15 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
     { menuButtonLink: { name: 'Quotes', link: '/Payments' } },
     { menuButtonLink: { name: 'Payment-Link', link: '/Payments' } },
   ];
+
+  const [showChildContainer, setShowChildContainer] = useState(false);
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [showChildText, setShowChildText] = useState(false);
   const onButtonClick = (buttonName: string, childText?: string[]) => {
-    setActiveButton((prevActiveButton) => (prevActiveButton === buttonName ? buttonName : buttonName));
+    setActiveButton((prevActiveButton) => (prevActiveButton === buttonName ? null : buttonName));
     setShowChildText(childText !== undefined && childText.length > 0);
+    setShowChildContainer(true);
   };
-
-
 
   return (
     <div className='page'>
@@ -38,11 +39,8 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
         <div className="vertical-menu">
           <span className="Tittle">Payments</span>
           <div className='Menu-Container'>
-
             {menuButtons.map((button, index) => (
               <div key={index} className='test'>
-
-
                 <Link
                   className="Chart-menu-link"
                   to={button.menuButtonLink.link}
@@ -53,7 +51,6 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
                     {button.menuButtonLink.name}
                   </div>
                 </Link>
-
                 {button.childs !== undefined && activeButton === button.menuButtonLink.name ? button.childs.map((child, childTextIndex) => (
                   <Link
                     key={childTextIndex}
@@ -62,7 +59,6 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
                   >{child.name}
                   </Link>
                 )) : null}
-
               </div>
             ))}
             <div className="backgroundLine"></div>
@@ -71,7 +67,6 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
 
         <div className="horizontal-menu">
           <div className='Menu-Container'>
-
             {menuButtons.map((button, index) => (
               <div key={index} className='test'>
                 <Link
@@ -84,43 +79,32 @@ const ChartMenu: React.FC<ChartMenuProps> = () => {
                     {button.menuButtonLink.name}
                   </div>
                 </Link>
-
               </div>
-
             ))}
-
           </div>
-
-
         </div>
-
-
-
       </div>
-      <div className='child-contianer'>
 
-        {menuButtons.map((button, index) => (
-
-          <div key={index} className='child-menu'>
-
-            {button.childs !== undefined && activeButton === button.menuButtonLink.name ? button.childs.map((child, childTextIndex) => (
-              <Link
-                key={childTextIndex}
-                className='child-text'
-                to={child.link}
-              >{child.name}
-              </Link>
-            )) : null}
-
-          </div>
-
-        ))}
-
-      </div>
+      {showChildContainer && (
+        <div className='child-contianer'>
+          {menuButtons.map((button, index) => (
+            <div key={index} className='child-menu'>
+              {button.childs !== undefined && activeButton === button.menuButtonLink.name ? button.childs.map((child, childTextIndex) => (
+                <Link
+                  key={childTextIndex}
+                  className='child-text'
+                  to={child.link}
+                >{child.name}
+                </Link>
+              )) : null}
+            </div>
+          ))}
+        </div>
+      )}
       {activeButton !== null && activeButton !== undefined && (
         <div className="triangle"></div>
       )}
-
+      
       <Routes>
         <Route path='/All-transactions' element={<div className='PaymentsPage'><PaymentsPage /></div>} />
       </Routes>

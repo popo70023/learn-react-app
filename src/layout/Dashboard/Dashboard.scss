@@ -1,9 +1,29 @@
 .Dashboard {
     position: relative;
     width: 1280px; 
+ 
     .header{
         position: relative;
         margin-left: -80px;
         margin-bottom: 28px;
+    }
+    
+}
+@media (max-width: 768px){
+    .Dashboard{
+        height: 128px;
+        .header{
+            position: relative;
+
+        }
+        .horizontal-menu{
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: -100px;
+            left: 20px;
+            margin-bottom: 0px;
+            
+        }
     }
 }

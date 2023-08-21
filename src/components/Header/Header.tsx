@@ -9,11 +9,22 @@ import helpIcon from '../../assets/svg/help_icon.svg';
 import settingIcon from '../../assets/svg/setting_icon.svg';
 import bellIcon from '../../assets/svg/bell_icon.svg';
 import accountIcon from '../../assets/svg/account_icon.svg';
+import { Route, Routes } from 'react-router-dom';
 
 interface HeaderProps { }
 
 const Header: FC<HeaderProps> = () => (
   <div className="Header" data-testid="Header">
+    <a className="active-page-hint">
+      <Routes>
+        <Route path="/" element="home" />
+        <Route path="/Payments/*" element="Payments" />
+        <Route path="/Customers" element="Customers" />
+        <Route path="/Products" element="Products" />
+        <Route path="/Reports" element="Reports" />
+        <Route path="/Connect" element="Connect" />
+      </Routes>
+    </a>
     <div className="logo-bar">
       <img src={logo} />
     </div>
@@ -32,12 +43,10 @@ const Header: FC<HeaderProps> = () => (
         Activate account ➜
       </button>
       <div className="search-frame">
-        <input className="search-input">
-
-        </input>
-        <button className="search-button" onClick={(e) => { console.log('hellow'); }}>
+        <input className="search-input" />
+        <button className="search-button">
           <img src={searchIcon} />
-          Search
+          <p className="search-text">Search</p>
         </button>
       </div>
       <button className="create-button">

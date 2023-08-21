@@ -131,15 +131,14 @@
     display: none;
   }
   .ChartMenu {
-    overflow-y: hidden;
     display: flex;
-    top: 20px;
+    top: 18px;
     width: 100%;
     height: 46px;
     border-radius: 0px;
     align-items: center;
     overflow-x: auto;
-    
+    overflow-y: hidden;
   
 
     &::-webkit-scrollbar {
@@ -152,9 +151,9 @@
     }
 
     .horizontal-menu {
-      height: 20px;
+      
       display: flex;
-      right: 100px;
+      
       .Menu-Container {
         display: flex;
         flex-direction: row;
@@ -162,7 +161,7 @@
         align-items: center;
         vertical-align: text-top;
         top: 0px;
-        left: 115px;
+        left: 15px;
         height: 46px;
         background-color: white;
         .test {
