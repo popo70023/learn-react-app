@@ -15,50 +15,52 @@ interface HeaderProps { }
 
 const Header: FC<HeaderProps> = () => (
   <div className="Header" data-testid="Header">
-    <a className="active-page-hint">
-      <Routes>
-        <Route path="/" element="home" />
-        <Route path="/Payments/*" element="Payments" />
-        <Route path="/Customers" element="Customers" />
-        <Route path="/Products" element="Products" />
-        <Route path="/Reports" element="Reports" />
-        <Route path="/Connect" element="Connect" />
-      </Routes>
-    </a>
-    <div className="logo-bar">
-      <img src={logo} />
+    <div className="logo-hint">
+      <a className="active-page-hint">
+        <Routes>
+          <Route path="/" element="home" />
+          <Route path="/Payments/*" element="Payments" />
+          <Route path="/Customers" element="Customers" />
+          <Route path="/Products" element="Products" />
+          <Route path="/Reports" element="Reports" />
+          <Route path="/Connect" element="Connect" />
+        </Routes>
+      </a>
+      <img src={logo} className="logo" />
+      <button className="beta-hint">
+        Test Beta
+      </button>
     </div>
-    <button className="beta-hint">
-      Test Beta
-    </button>
     <div className="tool-bar">
-      <button className="user-switch">
-        <div className="user-switch-content">
-          <img src={userIcon} />
-          <p>Name User</p>
-          <img src={dropDownIconBlue} />
+      <div className="main-tool-bar">
+        <button className="user-switch">
+          <div className="user-switch-content">
+            <img src={userIcon} />
+            <p>Name User</p>
+            <img src={dropDownIconBlue} />
+          </div>
+        </button>
+        <button className="activate-button">
+          Activate account ➜
+        </button>
+        <div className="search-frame">
+          <input className="search-input" />
+          <button className="search-button">
+            <img src={searchIcon} />
+            <p className="search-text">Search</p>
+          </button>
         </div>
-      </button>
-      <button className="activate-button">
-        Activate account ➜
-      </button>
-      <div className="search-frame">
-        <input className="search-input" />
-        <button className="search-button">
-          <img src={searchIcon} />
-          <p className="search-text">Search</p>
+        <button className="create-button">
+          <p>Create</p>
+          <img src={dropDownIconWhite} />
         </button>
       </div>
-      <button className="create-button">
-        <p>Create</p>
-        <img src={dropDownIconWhite} />
-      </button>
-    </div>
-    <div className="icon-bar">
-      <img src={helpIcon} />
-      <img src={settingIcon} />
-      <img src={bellIcon} />
-      <img src={accountIcon} />
+      <div className="icon-bar">
+        <img src={helpIcon} />
+        <img src={settingIcon} />
+        <img src={bellIcon} />
+        <img src={accountIcon} />
+      </div>
     </div>
   </div>
 );

@@ -1,119 +1,114 @@
 .Header {
     display: block;
-    height: 190px;
+    margin-bottom: 37px;
 
-    .active-page-hint {
-        display: none;
-        position: absolute;
-        left: 131px;
-        top: 50px;
-        color: #0C1E5B;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: normal;
-    }
+    .logo-hint {
+        display: flex;
+        justify-content: space-between;
 
-    .logo-bar {
-        position: absolute;
-        left: 87px;
-        top: 81px;
-    }
+        .active-page-hint {
+            display: none;
+            margin-left: 51px;
+            margin-top: 50px;
+            color: #0C1E5B;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: normal;
+        }
 
-    .beta-hint {
-        position: absolute;
-        left: 1275px;
-        top: 67px;
-        background-color: #A4D8F7;
-        color: #0C1E5B;
-        font-size: 10px;
-        width: 85px;
-        height: 26px;
+        .logo {
+            margin-left: 5px;
+            margin-top: 81px;
+            height: 30px;
+        }
+
+        .beta-hint {
+            margin-top: 67px;
+            background-color: #A4D8F7;
+            color: #0C1E5B;
+            font-size: 10px;
+            width: 85px;
+            height: 26px;
+        }
     }
 
     .tool-bar {
-        position: absolute;
-        left: 80px;
-        top: 133px;
+        margin-top: 23px;
         display: flex;
+        justify-content: space-between;
         height: 48px;
 
-        .user-switch {
-            position: absolute;
-            background-color: #FFFFFF;
-            color: #0C1E5B;
-            height: inherit;
-            width: 168px;
+        .main-tool-bar {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
 
-            .user-switch-content {
-                width: inherit;
-                display: flex;
-                justify-content: space-evenly;
-            }
-        }
-
-        .activate-button {
-            position: absolute;
-            left: 268px;
-            background-color: #A4D8F7;
-            color: #0C1E5B;
-            height: inherit;
-            width: 168px;
-        }
-
-        .search-frame {
-            position: absolute;
-            left: 454px;
-            display: flex;
-            background-color: #FFFFFF;
-            height: inherit;
-            width: 501px;
-            border-radius: 10px;
-
-            .search-input {
-                position: absolute;
-                width: inherit;
-                height: inherit;
-                border-style: none;
-                border-radius: 10px;
-            }
-
-            .search-button {
-                position: absolute;
-                right: 0px;
-                height: inherit;
-                background-color: transparent;
+            .user-switch {
+                background-color: #FFFFFF;
                 color: #0C1E5B;
-                font-size: 14px;
+                height: inherit;
+                width: 168px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                .user-switch-content {
+                    width: inherit;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+
+            .activate-button {
+                margin-left: 100px;
+                background-color: #A4D8F7;
+                color: #0C1E5B;
+                height: inherit;
+                width: 168px;
+            }
+
+            .search-frame {
+                position: relative;
+                margin-left: 18px;
+                display: flex;
+                width: 501px;
+
+                .search-input {
+                    border-style: none;
+                    border-radius: 10px;
+                    width: inherit;
+                    height: inherit;
+                }
+
+                .search-button {
+                    position: absolute;
+                    right: 0px;
+                    height: inherit;
+                    background-color: transparent;
+                    font-size: 14px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+            }
+
+            .create-button {
+                margin-left: 20px;
+                background-color: #FF6966;
+                color: #FFFFFF;
+                height: inherit;
+                width: 106px;
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
             }
         }
 
-        .create-button {
-            position: absolute;
-            left: 975px;
-            background-color: #FF6966;
-            color: #FFFFFF;
-            height: inherit;
-            width: 106px;
+        .icon-bar {
+            margin-top: 11px;
             display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+            justify-content: space-between;
+            height: 18px;
+            width: 184px;
         }
-    }
-
-    .icon-bar {
-        position: absolute;
-        left: 1176px;
-        top: 145px;
-        display: flex;
-        justify-content: space-between;
-        height: 18px;
-        width: 184px;
     }
 
     button {
@@ -127,51 +122,57 @@
 @media all and (max-width: 768px) {
 
     .Header {
-        height: 110px;
+        .logo-hint {
+            .active-page-hint {
+                display: block;
+            }
 
+            .logo {
+                margin-top: 10px;
+            }
 
-        .active-page-hint {
-            display: block;
-        }
-
-        .logo-bar {
-            left: 160px;
-            top: 10px;
-        }
-
-        .beta-hint {
-            left: 345px;
-            top: 50px;
+            .beta-hint {
+                margin-right: 18px;
+                margin-top: 50px;
+            }
         }
 
         .tool-bar {
-            left: 100px;
-            top: 90px;
+            margin-top: 18px;
             height: 36px;
 
-            .user-switch {
-                display: none;
-            }
+            .main-tool-bar {
+                width: 100%;
 
-            .activate-button {
-                display: none;
-            }
+                .user-switch {
+                    display: none;
+                }
 
-            .search-frame {
-                left: 0px;
-                width: 325px;
-                .search-text {
+                .activate-button {
+                    display: none;
+                }
+
+                .search-frame {
+                    margin-right: 18px;
+                    width: 100%;
+
+                    .search-button {
+                        height: 36px;
+
+                        .search-text {
+                            display: none;
+                        }
+                    }
+                }
+
+                .create-button {
                     display: none;
                 }
             }
 
-            .create-button {
+            .icon-bar {
                 display: none;
             }
-        }
-
-        .icon-bar {
-            display: none;
         }
     }
 }
