@@ -72,21 +72,24 @@ const HorizontalMenu: FC<HorizontalMenuProps> = () => {
               <div className={`horizontal-menu-btn  ${activeButton === button.name ? 'horizontal-menu-btn-active' : ''} `}>{button.name}</div>
             </Link>
           ))}
-          <nav className="dropdown">
-            <ul className="dropdown-menu">
-              <li className="dropdown-menu-item" onMouseLeave={handleLeave}>
-                <a onMouseEnter={handleHover} >More</a>
+          <div>
+            <nav className="dropdown">
+              <ul className="dropdown-menu">
+                <li className="dropdown-menu-item" onMouseLeave={handleLeave}>
+                  <a onMouseEnter={handleHover} >More</a>
 
-                <div className="dropdown-list">
-                  {showAboutMenu && <Submenu />}
-                </div>
-              </li>
-            </ul>
-          </nav>
-          <svg className={`dropdown-svg  ${showAboutMenu ? 'dropdown-svg-active' : ''}`} xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-            <path d="M1 1L5 5L9 1" stroke="#0C1E5B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+                  <div className="dropdown-list">
+                    {showAboutMenu && <Submenu />}
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <svg className={`dropdown-svg  ${showAboutMenu ? 'dropdown-svg-active' : ''}`} xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="#0C1E5B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
           <button className="horizontal-menu-link developers"><div className="horizontal-menu-btn">{'Developers'}</div></button>
+
           <p className=" test-mode">{'Test Mode'}</p>
           <FormControlLabel
             control={<Switch checked={checked} onChange={handleChange} className="switch-button" />} label="" />
