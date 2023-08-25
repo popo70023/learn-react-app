@@ -1,8 +1,13 @@
 .Payments {
     position: relative;
-    display: flex;
+    width: calc(100% - 290px);
     .payments-header{
         position: relative;
         margin-left: 30px;
+    }
+}
+@media (max-width: 768px){
+    .Payments{
+        width:100%;
     }
 }
