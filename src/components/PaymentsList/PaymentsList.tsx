@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import './PaymentsList.scss';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Checkbox, Slider, Switch } from '@mui/material';
@@ -8,19 +8,53 @@ import { Checkbox, Slider, Switch } from '@mui/material';
 interface PaymentsListProps { }
 
 interface List {
-  Product: string;
-  Performance: string;
-  PerformanceNum: number;
-  Stock: string;
-  Price: number;
+
   Status: boolean;
 }
 
+interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: {
+    lat: string;
+    lng: string;
+  };
+}
+
+interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
+}
+
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: Address;
+  phone: string;
+  website: string;
+  company: Company;
+  
+}
+
+
 const PaymentsList: FC<PaymentsListProps> = () => {
   const list: List[] = [
-    { Product: 'Product Really\n1043id3', Performance: 'Good', PerformanceNum: 50, Stock: "2.400", Price: 16, Status: true },
-    { Product: 'Product Sureally\n1043id3', Performance: 'Bad', PerformanceNum: 25, Stock: "1.200", Price: 41, Status: false },
-    { Product: 'Product Really\n1043id3', Performance: 'Good', PerformanceNum: 50, Stock: "2.400", Price: 16, Status: true },
+    { Status: true },
+    { Status: false },
+    { Status: true },
+    { Status: true },
+    { Status: true },
+    { Status: false },
+    { Status: true },
+    { Status: false },
+    { Status: false },
+    { Status: false },
+    { Status: false },
   ];
 
   const [checkboxStates, setCheckboxStates] = useState<boolean[]>(list.map(item => item.Status));
@@ -46,17 +80,28 @@ const PaymentsList: FC<PaymentsListProps> = () => {
     updatedSwitchStates[index] = !updatedSwitchStates[index];
     setSwitchStates(updatedSwitchStates);
   };
+  const [data, setData] = useState<User[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const jsonData = await response.json();
+      setData(jsonData);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <div className="PaymentsList" data-testid="PaymentsList">
       <div className="PaymentsList-Container">
         <div className="tittle-Container ">
           <div className='all-checkbox'>
-          <Checkbox
-            className="checkbox  all-checkbox"
-            checked={allCheckboxChecked}
-            onChange={handleAllCheckboxChange}
-          />
+            <Checkbox
+              className="checkbox  all-checkbox"
+              checked={allCheckboxChecked}
+              onChange={handleAllCheckboxChange}
+            />
           </div>
           <p className="title-Product">Product</p>
           <p className="title-Performance">Performance</p>
@@ -65,46 +110,47 @@ const PaymentsList: FC<PaymentsListProps> = () => {
           <p className="title-Status">Status</p>
         </div>
         <div className="List-Container">
-          {list.map((item, index) => (
+
+          {data.map((item, index) => (
             <div key={index} className={`list-data ${checkboxStates[index] ? 'selected' : ''}`}>
               <div className={`list-item-details ${selectedItemIndex === index ? 'item-selected' : ''}`}>
                 <Checkbox
                   className="checkbox"
                   checked={checkboxStates[index]}
-                  onChange={() => {handleCheckboxChange(index);}}
+                  onChange={() => { handleCheckboxChange(index); }}
                 />
                 <div className="Product-container">
-                <p className='list-margin-Product'>{item.Product.split('\n').map((line, i) => (
-                  <React.Fragment key={i}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
-                  <div className='SKU'>
-                    SKU = 1432-TW
-                  </div>
-                </p>
+                  <p className='list-margin-Product'>{item.name.split('\n').map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                    <div className='SKU'>
+                      {item.address.zipcode}
+                    </div>
+                  </p>
                 </div>
                 <div className='list-Performance'>
-                  <p className='list-Performance-text'>{item.Performance} </p>
-
+                  <p className='list-Performance-text'>{item.username} </p>
+                    
                   <Slider
-                    defaultValue={item.PerformanceNum}
+                    defaultValue={Math.abs(Math.round(parseFloat(item.address.geo.lat)))}
                     valueLabelDisplay="auto"
                     step={25}
                     min={0}
                     max={100}
                     className={`slider-wrapper ${checkboxStates[index] ? 'slider-selected' : 'slider-noselected'}`}
-     
+
                   />
                 </div>
-                <p className='list-margin'>{item.Stock}</p>
-                <p className='list-margin'>${item.Price}</p>
+                <p className='list-margin'>{item.address.geo.lng}</p>
+                <p className='list-margin'>${item.address.geo.lat}</p>
                 <FormControlLabel
                   control={
                     <Switch
                       checked={switchStates[index]}
-                      onChange={() => {handleSwitchChange(index);}}
+                      onChange={() => { handleSwitchChange(index); }}
                       className="switch-button"
                     />
                   }

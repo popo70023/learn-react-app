@@ -56,7 +56,7 @@
 
     .title-Price {
       color: #0C1E5B;
-      margin-left: 100px;
+      margin-left: 120px;
       font-size: 12px;
     }
 
@@ -80,11 +80,12 @@
 
     .list-margin {
       margin-left: 100px;
+      min-width: 60px;
     }
 
     .Product-container {
-      min-width: 190px;
-      max-width: 210px;
+      min-width: 200px;
+      max-width: 200px;
       margin-left: -37px;
     }
 
@@ -94,6 +95,7 @@
     }
 
     .list-Performance {
+      margin-top: 10px;
       margin-left: 83px;
       min-width: 92px;
       max-width: 92px;
