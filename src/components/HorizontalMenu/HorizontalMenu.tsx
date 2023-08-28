@@ -89,10 +89,11 @@ const HorizontalMenu: FC<HorizontalMenuProps> = () => {
             </svg>
           </div>
           <button className="horizontal-menu-link developers"><div className="horizontal-menu-btn">{'Developers'}</div></button>
-
-          <p className=" test-mode">{'Test Mode'}</p>
-          <FormControlLabel
-            control={<Switch checked={checked} onChange={handleChange} className="switch-button" />} label="" />
+          <div className='test-button'>
+            <p className=" test-mode">{'Test Mode'}</p>
+            <FormControlLabel
+              control={<Switch checked={checked} onChange={handleChange} className="switch-button" />} label="" />
+          </div>
         </div>
       </div>
       <div className="horizontal-menu-phone" onClick={handleButtonClick}>
